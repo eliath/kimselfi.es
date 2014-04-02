@@ -1,0 +1,45 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+
+/* ==========================================================================
+   Geometry
+   ========================================================================== */
+$frame_w	:  1024px;
+$frame_h	:  1024px;
+$inner_w  	:  800px;
+
+/* Nav Bar */
+$nav_h	:	50px;
+
+/* Nickname Prompt */
+$prompt_w	:	300px;
+$prompt_h	:	200px;
+
+
+
+
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+h1,h2,h3,h4,h5,h6,p {
+	font-family: sans-serif;
+}
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+
+
+
+
+
+
