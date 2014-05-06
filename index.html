@@ -8,27 +8,60 @@
         <link rel="stylesheet" href="css/screen.css">
         <link rel="author" href="humans.txt">
         <script src="js/jquery-1.11.0.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/resemble.js"></script>
     </head>
     <body>
-        <!-- Top Bar -->
-        <nav class="topnav">
-            <div class="wrap">
-                <h1>Kim Selfies</h1>
-            </div>
-        </nav>
 
-        <!-- Nickname Overlay -->
-        <div id="prompt_wrap" class="prompt_wrap">
-            <div class="prompt">
-                <h1>Give yourself a nickname!</h1>
-                <form id="nickname_form">
-                    <input id="nickname_input" type="text" placeholder="Kimmy">
-                    <input type="submit">
-                </form>
-            </div>
+    <!-- Intro / Splash / Overlay -->
+    <aside id="overlay" class="overlay">
+        <h1>Kim Selfies</h1>
+        <p>
+            <a href="#about" onclick="showAbout();">about</a>
+            <a href="#help" onclick="showHelp();">help</a>
+        </p>
+        <div id="aboutPane" class="hiddivs">
+            <p>Kim selfies is... cool? I guess?</p>
         </div>
+        <div id="helpPane" class="hiddivs">
+            <p>
+                Look at the top of your browser view, and elect to allow
+                kimselfi.es to access your web camera. 
+                <br><br>
+                Once you're in, try to become one with Kim. You will be judged.
+                <br><br>
+                P.S. Using Safari? That's a no-go.
 
+            </p>
+        </div>
+    </aside>
 
+    <!-- Video Feedback -->
+    <video id='monitor' class='monitor' autoplay></video>
+
+    <!-- Kim Overlay -->
+    <section id="main" class='main'>
+        <div id="kim" class="kim"></div>
+        <div id="refreshButton" class="refresh" onclick="refreshKim();"></div>
+    </section>
+
+    <!-- Img Interfaces -->
+    <canvas id='snap_canvas' class='snap_canvas'></canvas>
+    <canvas id="kim_canvas" class="kim_canvas"></canvas>
+
+    <!-- Lower / Results -->
+    <section id='lower' class='lower'>
+        <img id='snap' class='snap_out shot' src="">
+        <img id='kimk' class='kim_out shot' src="">
+        <div id='result' class="result">
+            <!-- comparison result goes here -->
+        </div>
+        <h1>Score: <span id="score" class="score">
+            <!-- Score gets injected here -->
+        </span></h1>
+        <p><button onclick="playAgain();">Play Again</button></p>
+    </section>
+
+    <!-- Javascript -->
+    <script src="js/main.js"></script>
     </body>
 </html>

@@ -156,52 +156,224 @@ h1, h2, h3, h4, h5, h6, p {
    Mixins
    ========================================================================== */
 /* line 9, sass/screen.scss */
-.topnav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  box-shadow: 0px 0px 5px black;
-}
-/* line 16, sass/screen.scss */
-.topnav .wrap {
-  width: 800px;
-  height: 50px;
-  margin: 0 auto;
-}
-/* line 20, sass/screen.scss */
-.topnav .wrap h1 {
-  font-weight: 800;
-  line-height: 50px;
+body, html {
+  background: #111;
+  overflow: hidden;
 }
 
-/* line 27, sass/screen.scss */
-.prompt_wrap {
+/* line 14, sass/screen.scss */
+p, h1, h2 {
+  font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
+/* line 19, sass/screen.scss */
+canvas {
+  display: none;
+}
+
+/* ==========================================================================
+   Intro / Overlay / Splash
+   ========================================================================== */
+/* line 26, sass/screen.scss */
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #111;
+  z-index: 10;
 }
 /* line 34, sass/screen.scss */
-.prompt_wrap .prompt {
-  position: relative;
-  top: 150px;
-  margin: 0 auto;
-  width: 300px;
-  height: 200px;
-  background: #FFFFFF;
+.overlay h1 {
+  margin-top: 200px;
   text-align: center;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  border-radius: 10px;
+  color: #FFF;
+  font-size: 4.5em;
+  font-style: italic;
 }
 /* line 43, sass/screen.scss */
-.prompt_wrap .prompt h1 {
-  padding: 50px 0 20px;
-  font-weight: bold;
+.overlay p {
+  position: relative;
+  bottom: 10px;
+  text-align: center;
+}
+/* line 47, sass/screen.scss */
+.overlay p a {
+  font-style: italic;
+  color: #FFF;
+  text-decoration: none;
+  margin-right: 90px;
+}
+/* line 51, sass/screen.scss */
+.overlay p a:hover {
+  color: #2a8fed;
+  text-decoration: underline;
+}
+/* line 59, sass/screen.scss */
+.overlay .hiddivs {
+  display: none;
+  position: absolute;
+  width: 500px;
+  left: 50%;
+  top: 350px;
+  padding: 10px 0;
+  margin-left: -250px;
+  border-top: 1px solid #ddd;
+}
+/* line 67, sass/screen.scss */
+.overlay .hiddivs p {
+  margin-top: 20px;
+  padding: 0 10px;
+  text-align: left;
+  line-height: 1.5em;
+  color: #FFF;
+}
+
+/* ==========================================================================
+   Video Feedback
+   ========================================================================== */
+/* line 81, sass/screen.scss */
+.monitor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Kim Overlay
+   ========================================================================== */
+/* line 92, sass/screen.scss */
+.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #191c20;
+}
+
+/* line 99, sass/screen.scss */
+.kim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: 2;
+  background: url("/click/img/kims/0.jpg") center center no-repeat;
+  background-size: auto 100%;
+}
+
+/* line 109, sass/screen.scss */
+.refresh {
+  position: absolute;
+  top: 150px;
+  left: 100px;
+  width: 20px;
+  height: 20px;
+  background: url(../img/refresh.svg) center center no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* ==========================================================================
+   Lower / Results
+   ========================================================================== */
+/* line 123, sass/screen.scss */
+.lower {
+  background: #191c20;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  left: 0;
+  z-index: 3;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+/* line 133, sass/screen.scss */
+.lower h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  font-style: italic;
+  height: 50px;
+  line-height: 50px;
+  float: left;
+}
+/* line 142, sass/screen.scss */
+.lower h1 .score {
+  width: 110px;
+  height: 50px;
+  border: 1px solid #FFF;
+  padding: 0 5px;
+}
+/* line 149, sass/screen.scss */
+.lower p {
+  text-align: center;
+  margin-top: 110px;
+}
+/* line 153, sass/screen.scss */
+.lower button {
+  font-size: 1.4em;
+  font-style: italic;
+  font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+  color: black;
+  background: #FFF;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 2px;
+  box-shadow: inset 0 -2px 0 #aaa;
+  oultine: none;
+}
+/* line 166, sass/screen.scss */
+.lower button:hover {
+  box-shadow: inset -0px -3px 0 #ccc;
+  cursor: pointer;
+}
+
+/* line 173, sass/screen.scss */
+.result {
+  position: relative;
+  width: 30vw;
+  height: calc(30vw / 1.333333333);
+  margin: 250px auto 5%;
+}
+/* line 178, sass/screen.scss */
+.result img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+/* line 185, sass/screen.scss */
+.shot {
+  position: absolute;
+  top: 200px;
+  width: 40vw;
+  height: calc(40vw / 1.333333333);
+  border: none;
+}
+
+/* line 193, sass/screen.scss */
+.snap_out {
+  left: 5%;
+}
+
+/* line 197, sass/screen.scss */
+.kim_out {
+  right: 5%;
 }
