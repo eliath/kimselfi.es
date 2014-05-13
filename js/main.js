@@ -3,7 +3,8 @@ var _video,
 	_context,
 	_stream,
 	_kimCanvas,
-	_kimCtx;
+	_kimCtx,
+	results_shown = false;
 
 
 $(function() {
@@ -35,9 +36,12 @@ $(function() {
 		$("#kim").click(snap);
 		// $("#snap_button").click(snap);
 		$( window ).keypress(function(e){
-			if(e.keyCode == 32) {
+			if(e.keyCode == 32 && !results_shown) {
 				e.preventDefault();
 				snap(); //snapshot on spacebar
+			} else if(e.keyCode == 13 && results_shown) {
+				e.preventDefault();
+				playAgain(); //return to snapping area on 'ENTER'
 			}
 		});
 
@@ -91,7 +95,7 @@ function refreshKim() {
 
 
 function getKimImgURL(i) {
-	return "url(/click/img/kims/"+i+".jpg)";
+	return "url(../img/kims/"+i+".jpg)";
 }
 
 
@@ -102,7 +106,7 @@ function snap() {
         _context.drawImage(_video, 0, 0, 300, 150);
 		//_context.drawImage(_video, 0, 0);
 		var img_out = document.getElementById('snap');
-		var usr_dataURL = _canvas.toDataURL('image/webp'); //TESTME: Chrome is best, others fall back to 'image/png'.
+		var usr_dataURL = _canvas.toDataURL('image/webp');
 		img_out.src = usr_dataURL;
 
 		// Then capture Kim K (to normalize) with webcam
@@ -118,8 +122,6 @@ function snap() {
 		var kim_dataURL = _kimCanvas.toDataURL('image/webp'); //TESTME: Chrome is best, others fall back to 'image/png'.
 		img_out.src = kim_dataURL;
 
-		// var blob1 = dataURLtoBlob(usr_dataURL);
-		// var blob2 = dataURLtoBlob(kim_dataURL);
 		resemble(usr_dataURL).compareTo(kim_dataURL).onComplete(function(data) {
 			// console.log(data);
 			var result_img = new Image();
@@ -127,12 +129,21 @@ function snap() {
 			$('#result').html(result_img);
 
 			var match = 100 - data.misMatchPercentage;
-			console.log("* Percent Match:", match);
+			console.log("- Percent Match:", match);
 			var score = Math.floor(match*100);
 			$("#score").text(score);
 
 			//animate lower to top
-			$("#lower").animate({"top": 0}, 400);
+			$("#lower").animate({"top": 0}, 400, function() {
+				results_shown = true;
+			});
+
+			//Sharing:
+			var score_str = 'I got a ' + score + ' Kim Selfies Score!';
+			//put info into fb share button thing
+			$("meta[property='og:title']").attr('content', score_str);
+			//put info in tweet thing //XXX doesnt work
+			// $("#tweet").attr('data-text', score_str +  " How #kim are you?");
 
 			//return data;
 			/*
@@ -163,22 +174,27 @@ function err(str) {
 }
 
 function showAbout() {
-	var abt = $("#aboutPane");
-	var help = $("#helpPane");
+	var abt  = $("#aboutPane"),
+		help = $("#helpPane");
+
 	if (help.is(":visible"))
 		help.fadeToggle('slow');
 	abt.fadeToggle('slow');
 }
 
 function showHelp() {
-	var abt = $("#aboutPane");
-	var help = $("#helpPane");
+	var abt  = $("#aboutPane"),
+		help = $("#helpPane");
+
 	if (abt.is(":visible"))
 		abt.fadeToggle('slow');
 	help.fadeToggle('slow');
 }
 
 function playAgain() {
+	$("#playagain").blur();
 	refreshKim();
-	$("#lower").animate({"top": "100%"}, 300);
+	$("#lower").animate({"top": "100%"}, 300, function() {
+		results_shown = false;
+	});
 }

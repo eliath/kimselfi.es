@@ -1,1 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?> <!-- Generator: IcoMoon.io --> <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g><path d="M 14.987,0c-0.56,0-1.013,0.454-1.013,1.013l0,2.362 C 12.832,1.992, 11.516,0, 7.894,0C 3.542,0,0,3.541,0,7.894 c0,4.353, 3.542,7.894, 7.894,7.894c 3.418,0, 6.432-2.183, 7.502-5.432c 0.177-0.541-0.117-1.124-0.658-1.302 c-0.541-0.178-1.124,0.116-1.302,0.657c-0.79,2.401-3.017,4.014-5.542,4.014c-3.216,0-5.832-2.616-5.832-5.832 s 2.616-5.82, 5.832-5.82c 2.277,0, 3.542,1.417, 4.574,2.903L 9.921,4.976 c-0.56,0-1.013,0.454-1.013,1.013c0,0.56, 0.454,1.013, 1.013,1.013 l 5.066,0 C 15.546,7.004, 16,6.55, 16,5.991L 16,1.013 C 16,0.454, 15.546,0, 14.987,0z"></path></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.1 (7597) - http://www.bohemiancoding.com/sketch -->
+    <title>Untitled</title>
+    <description>Created with Sketch.</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M15.987,1 C15.427,1 14.974,1.454 14.974,2.013 L14.974,4.375 C13.832,2.992 12.516,1 8.894,1 C4.542,1 1,4.541 1,8.894 C1,13.247 4.542,16.788 8.894,16.788 C12.312,16.788 15.326,14.605 16.396,11.356 C16.573,10.815 16.279,10.232 15.738,10.054 C15.197,9.876 14.614,10.17 14.436,10.711 C13.646,13.112 11.419,14.725 8.894,14.725 C5.678,14.725 3.062,12.109 3.062,8.893 C3.062,5.677 5.678,3.073 8.894,3.073 C11.171,3.073 12.436,4.49 13.468,5.976 L10.921,5.976 C10.361,5.976 9.908,6.43 9.908,6.989 C9.908,7.549 10.362,8.002 10.921,8.002 L15.987,8.002 C16.546,8.004 17,7.55 17,6.991 L17,2.013 C17,1.454 16.546,1 15.987,1 L15.987,1 Z" id="Shape" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

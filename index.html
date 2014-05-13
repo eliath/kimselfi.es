@@ -6,11 +6,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Kimmy K</title>
         <link rel="stylesheet" href="css/screen.css">
-        <link rel="author" href="humans.txt">
+        <link rel="shortcut icon" type="image/png" href="favicon.png"/>
         <script src="js/jquery-1.11.0.min.js"></script>
         <script src="js/resemble.js"></script>
+
+        <!-- Meta tags for FB shit -->
+        <meta property="og:title" content="I got a 0000 Kim Selfies Score!" />
+        <meta property="og:description" content="Try for yourself at http://kimselfi.es/click !!" />
+        <meta property="og:image" content="http://kimselfi.es/click/favicon.png"/>
     </head>
     <body>
+
+    <!-- Facebook Javascript SDK -->
+    <div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
 
     <!-- Intro / Splash / Overlay -->
     <aside id="overlay" class="overlay">
@@ -20,7 +37,11 @@
             <a href="#help" onclick="showHelp();">help</a>
         </p>
         <div id="aboutPane" class="hiddivs">
-            <p>Kim selfies is... cool? I guess?</p>
+            <p>
+                Kim selfies is an online photobooth which predicates itself on the fetishization and subsequent emulation of Kim Kardashian in American pop culture. Taking Kim Kardashian as a figurehead of sorts, the project intends to incite a performance from the user in which the common practice of selfie-taking is brought into new light. The user is scored on the accuracy of their performance, alluding to the current flow of social capital in our contemporary social media economy. 
+                <br><br>
+                Kim Selfies creates a tension between the image of Kim Kardashian and the mirrored selfie image. Through this tension the user is brought to consider more closely the implications of an action that, without the overlay of Kim's face, is characterized by a feeling of fluid and accurate self-representation. Here, with the addition of Kim Kardashian, the selfie taker encounters a form of self-representation and is forced to reconcile Kim's identity and image with their own.
+            </p>
         </div>
         <div id="helpPane" class="hiddivs">
             <p>
@@ -58,7 +79,15 @@
         <h1>Score: <span id="score" class="score">
             <!-- Score gets injected here -->
         </span></h1>
-        <p><button onclick="playAgain();">Play Again</button></p>
+        <p>
+        <button id="playagain" onclick="playAgain();">Play Again</button>
+        </p>
+        <div class="social_wrap">
+            <div class="fb-share-button" data-href="http://kimselfi.es/" data-type="button"></div>
+            <a id="tweet" href="https://twitter.com/share" class="twitter-share-button" data-text="How #kim are you?" data-count="none" data-dnt="true">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+            </script>
+        </div>
     </section>
 
     <!-- Javascript -->
