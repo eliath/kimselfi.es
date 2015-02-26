@@ -35,6 +35,7 @@ canvas {
 		margin-top: 200px;
 		text-align: center;
 		color: #FFF;
+		letter-spacing: 2px;
 		font: {
 			size: 4.5em;
 			style: italic;
@@ -72,6 +73,44 @@ canvas {
 			color: #FFF;
 		}
 	}
+
+	.tooltip {
+		$tt_color: #e53d29;
+		$tt_arrow_sz: 8px;
+		display: block;
+    	position: fixed;
+    	top: $tt_arrow_sz + 4px;
+    	right: 40px;
+	    background: $tt_color;
+	    border-radius: 2px;
+	    color: #eee;
+	    padding: 5px 15px;
+	    z-index: 98;
+	    @include animate(pulse_opac, 2s);
+
+	    p {
+	    	font-size: 1.2em;
+	    	font-style: italic;
+	    	bottom: 0;
+	    }
+
+	    &:before {
+			border: solid;
+			border-color: $tt_color transparent;
+			border-width: 0 $tt_arrow_sz $tt_arrow_sz $tt_arrow_sz;
+			top: -$tt_arrow_sz;
+			content: "";
+			right: 27px;
+			position: absolute;
+			z-index: 99;
+		}
+	}
+}
+
+@include keyframes(pulse_opac) {
+	0%   { opacity: 1; }
+	50% { opacity: 0.75; }
+	100% { opacity: 1; }
 }
 
 
@@ -102,7 +141,7 @@ canvas {
 	width: 100%; height: 100%;
 	opacity: 0.5;
 	z-index: 2;
-	background: url("../img/kims/0.jpg") center center no-repeat;
+	background: url("/click/img/kims/0.jpg") center center no-repeat;
 	background-size: auto 100%;
 }
 
@@ -110,7 +149,7 @@ canvas {
 	position: absolute;
 	top: 15px; left: 20px;
 	width: 30px; height: 30px;
-	background: url(../img/refresh.svg) center center no-repeat;
+	background: url(/click/img/refresh.svg) center center no-repeat;
 	background-size: 100%;
 	cursor: pointer;
 	z-index: 3;

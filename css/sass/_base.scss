@@ -37,6 +37,26 @@ $link	:	#2a8fed;
 /* ==========================================================================
    Mixins
    ========================================================================== */
+@mixin animate($animationName, $speed) {
+  -webkit-animation: #{$animationName} #{$speed} linear infinite;
+  -moz-animation: #{$animationName} #{$speed} linear infinite;
+  -ms-animation: #{$animationName} #{$speed} linear infinite;
+  -o-animation: #{$animationName} #{$speed} linear infinite;
+  animation: #{$animationName} #{$speed} linear infinite;
+}
 
-
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
 

@@ -66,6 +66,7 @@ $(function() {
  * is ready to be played
  */
 function camReady() {
+	console.log("cam ready!");
 	sizeKim();
 	$("#overlay").fadeOut(800);
 }
@@ -95,7 +96,7 @@ function refreshKim() {
 
 
 function getKimImgURL(i) {
-	return "url(../img/kims/"+i+".jpg)";
+	return "url(/click/img/kims/"+i+".jpg)";
 }
 
 
