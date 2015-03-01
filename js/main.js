@@ -96,7 +96,7 @@ function refreshKim() {
 
 
 function getKimImgURL(i) {
-	return "url(/click/img/kims/"+i+".jpg)";
+	return "url(/img/kims/"+i+".jpg)";
 }
 
 
@@ -104,6 +104,7 @@ function getKimImgURL(i) {
 function snap() {
 	if (_stream) {
 		//first capture user selfie:
+		//TODO: try to flip the video.
         _context.drawImage(_video, 0, 0, 300, 150);
 		//_context.drawImage(_video, 0, 0);
 		var img_out = document.getElementById('snap');
